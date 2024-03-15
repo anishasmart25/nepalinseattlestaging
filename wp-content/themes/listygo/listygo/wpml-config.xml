@@ -1,0 +1,27 @@
+<wpml-config>
+  <admin-texts>
+    <key name="listygo">
+      <key name="phone_label" />
+      <key name="phone_number" />
+      <key name="mail_label" />
+      <key name="mail_number" />
+      <key name="social_label" />
+      <key name="header_login_text" />
+      <key name="menu_link_btn_text" />
+      <key name="offcanvas_title" />
+      <key name="offcanvas_date" />
+      <key name="offcanvas_time" />
+      <key name="offcanvas_location" />
+      <key name="offcanvas_address" />
+      <key name="offcanvas_contact_no" />
+      <key name="offcanvas_btn_txt" />
+      <key name="header_tag_line" />
+      <key name="apps_title" />
+      <key name="apps_desc" />
+      <key name="copyright_text" />
+      <key name="error_page_title" />
+      <key name="error_page_subtitle" />
+      <key name="error_buttontext" />
+    </key>
+  </admin-texts>
+</wpml-config>

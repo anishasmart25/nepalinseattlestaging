@@ -1,0 +1,42 @@
+<?php
+/**
+ * This file is for showing listing header
+ *
+ * @version 1.0
+ */
+
+use Rtcl\Helpers\Functions;
+use Rtcl\Models\RtclCFGField;
+use radiustheme\listygo\RDTListygo;
+
+global $listing;
+
+$doctor_group_id = isset( RDTListygo::$options['custom_doctor_fields_types'] ) ? RDTListygo::$options['custom_doctor_fields_types'] : [];
+
+if ( $doctor_group_id ) {
+  $field_ids   = Functions::get_cf_ids_by_cfg_id( $doctor_group_id );
+}
+
+?>
+
+<?php
+if ( ! empty( $field_ids ) ) {
+	foreach ( $field_ids as $single_field ) {
+		$field = new RtclCFGField( $single_field );
+		$value = $field->getFormattedCustomFieldValue( $listing->get_id() );
+		$icon = $field->getIconClass();
+		if ( ! $value || empty( $value ) ) {
+			continue;
+		}
+		if ( $icon ){
+			$icon = sprintf( '<span class="rtcl-cat-icon rtcl-icon rtcl-icon-%s"></span>', $icon );
+		}
+
+		?>
+ 	<li class="doctor-meta <?php echo $value; ?>">
+	   	<?php printf("%s %s", $icon, $value); ?>
+  	</li>
+<?php
+	}
+}
+?>
